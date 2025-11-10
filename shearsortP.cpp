@@ -50,6 +50,8 @@ void shearSortParallel(vector<vector<int>> &M)
 
 int main()
 {
+
+    double start = omp_get_wtime();
     int n, threads;
     cout << "Ingrese tamaño de matriz n×n: ";
     cin >> n;
@@ -73,5 +75,8 @@ int main()
             cout << setw(4) << val;
         cout << endl;
     }
+
+    double end = omp_get_wtime();
+    cout << "Walltime: " << end - start << " segundos" << endl;
     return 0;
 }

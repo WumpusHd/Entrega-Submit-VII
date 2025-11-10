@@ -86,6 +86,7 @@ int main()
     int n;
     cout << "Ingrese el tamaño de la matriz nxn: ";
     cin >> n;
+    clock_t start = clock();
 
     vector<vector<int>> M(n, vector<int>(n));
 
@@ -116,6 +117,10 @@ int main()
         cout << "\nLa matriz está ordenada en patrón serpiente.\n";
     else
         cout << "\nLa matriz NO está ordenada en patrón serpiente.\n";
+
+    clock_t end = clock();
+    double walltime = double(end - start) / CLOCKS_PER_SEC;
+    cout << "Walltime: " << walltime << " segundos" << endl;
 
     return 0;
 }

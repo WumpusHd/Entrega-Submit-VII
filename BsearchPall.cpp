@@ -78,6 +78,7 @@ int main()
     cin >> threads;
     cout << "¿Arreglo ordenado? (1=Sí, 0=No): ";
     cin >> ordered;
+    double start = omp_get_wtime();
 
     vector<int> arr(n);
     srand(static_cast<unsigned>(time(0)));
@@ -93,6 +94,10 @@ int main()
         cout << "Elemento encontrado en índice " << pos << endl;
     else
         cout << "Elemento no encontrado." << endl;
+
+
+    double end = omp_get_wtime();
+    cout << "Walltime: " << end - start << " segundos" << endl;
 
     return 0;
 }

@@ -39,6 +39,7 @@ int main()
     cin >> target;
     cout << "¿Está ordenado el arreglo? (1=Sí, 0=No): ";
     cin >> ordered;
+    clock_t start = clock();
 
     vector<int> arr(n);
     srand(static_cast<unsigned>(time(0)));
@@ -54,5 +55,9 @@ int main()
     else
         cout << "Elemento no encontrado." << endl;
 
+    clock_t end = clock();
+    double walltime = double(end - start) / CLOCKS_PER_SEC;
+    cout << "Walltime: " << walltime << " segundos" << endl;
+    
     return 0;
 }
